@@ -6,7 +6,7 @@ import { SocialsComponent } from "./socials/socials.component";
 import { StreamComponent } from "./stream/stream.component";
 
 const appRoutes: Routes = [
-    { path: '', pathMatch: 'full', redirectTo: '/home' },
+    { path: '', component: HomeComponent },
     { path: 'home', component: HomeComponent },
     { path: 'about', component: AboutComponent },
     { path: 'stream', component: StreamComponent },
