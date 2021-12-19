@@ -1,0 +1,16 @@
+h1 {
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: left;
+    height: 100%;
+
+    .content {
+        width: 80%;
+        margin: 3em auto;
+        font-size: 2em;
+        font-family: 'Pacifico', Mono;
+    }
+}
