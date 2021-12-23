@@ -21,13 +21,6 @@ export class StreamComponent implements OnInit {
 
   ngOnInit(): void {
       this.player = new TwitchEmbed('stream', this.options);
-
-      this.player.addEventListener(TwitchPlayerEvent.PAUSE, () => {
-        this.player.pause();
-      })
-      this.player.addEventListener(TwitchPlayerEvent.PLAY, () => {
-          this.player.play();
-      })
   }
 
 }
