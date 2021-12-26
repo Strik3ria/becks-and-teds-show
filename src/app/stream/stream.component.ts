@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TwitchEmbed, TwitchPlayerEvent } from 'twitch-player';
+import { TwitchEmbed } from 'twitch-player';
 
 @Component({
   selector: 'app-stream',
