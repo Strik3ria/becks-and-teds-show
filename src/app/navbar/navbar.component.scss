@@ -1,69 +1,18 @@
-#navbar {
-    border-bottom: solid black 2px;
-    box-shadow: 0.1em 0.25em grey;
-    background-image: url('../../assets/images/tdpic.jpg');
-    background-size: cover;
-    font-family: 'Pacifico', Mono;
-    width: auto;
-    height: 100em;
-    font-size: 30px;
-    float: left;
-
-    #nav-item, a {
-        text-decoration: none;
-        cursor: pointer;
-        color: black;
-        font-size: 3em;
-        background: transparent;
-        display: block;
-        margin-left: 0.25em;
-        margin-right: 0.25em;
-        margin-top: 0.25em;
-    }
-
-    #nav-logo {
-        background: transparent;
-        border-radius: 50%;
-    }
-
-    .active {
-        opacity: .5;
-    }
-
+* {
+    background: transparent;
 }
 
-@media (min-width: 900px) {
-    #navbar {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        border-bottom: solid black 2px;
-        box-shadow: 0.1em 0.25em grey;
-        background-image: url('../../assets/images/tdpic.jpg');
-        background-size: cover;
-        font-family: 'Pacifico', Mono;
-        font-size: 16px;
-        width: 100%;
-        height: auto;
-        float: none;
+.bg-image {
+    background-image: url("../../assets/images/tdpic.jpg");
+    background-size: cover;
+}
 
-        a {
-            text-decoration: none;
-            cursor: pointer;
-            color: black;
-            font-size: 3em;
-            background: transparent;
-            display: block;
-        }
+a {
+    color: black;
+    font-family: "Pacifico";
+    font-size: 2em;
+}
 
-        #nav-logo {
-            background: transparent;
-            border-radius: 50%;
-        }
-
-        .active {
-            opacity: .5;
-        }
-
-    }
+.active {
+    opacity: .5;
 }
