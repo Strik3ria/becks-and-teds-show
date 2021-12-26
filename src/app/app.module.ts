@@ -7,7 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { StreamComponent } from './stream/stream.component';
 import { AboutComponent } from './about/about.component';
-import { SocialsComponent } from './socials/socials.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -16,11 +16,11 @@ import { SocialsComponent } from './socials/socials.component';
     HomeComponent,
     StreamComponent,
     AboutComponent,
-    SocialsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
