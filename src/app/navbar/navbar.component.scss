@@ -16,3 +16,15 @@ a {
 .active {
     opacity: .5;
 }
+
+.nav-link:hover {
+    color: rgba(229,213,58,255);
+}
+
+.social-link:hover {
+    color: rgba(232,77,22,255);
+}
+
+.social-spacing {
+    padding: 0 3px 0 3px;
+}

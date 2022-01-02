@@ -2,3 +2,11 @@ img {
     height: 50em;
     width: 55em;
 }
+
+$breakpoint-tablet: 1350px;
+@media (max-width: $breakpoint-tablet) {
+    img {
+        height: 25em;
+        width: 30em;
+    }
+}
