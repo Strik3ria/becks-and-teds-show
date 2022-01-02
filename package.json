@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
+    "config": "ts-node ./src/assets/setEnv.ts",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "npm run config && ng build --prod",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -20,11 +21,17 @@
     "@angular/platform-browser-dynamic": "~13.1.0",
     "@angular/router": "~13.1.0",
     "@ng-bootstrap/ng-bootstrap": "^11.0.0",
+    "@types/axios": "^0.14.0",
+    "axios": "^0.24.0",
     "bootstrap": "^4.6.0",
     "bootstrap-icons": "^1.7.2",
+    "dotenv": "^10.0.0",
+    "prettier": "^2.5.1",
     "rxjs": "~7.4.0",
+    "ts-node": "^10.4.0",
     "tslib": "^2.3.0",
     "twitch-player": "^2.0.2",
+    "yargs": "^17.3.1",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {

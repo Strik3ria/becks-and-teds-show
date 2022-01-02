@@ -7,9 +7,7 @@ describe('AppComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [
-        AppComponent
-      ],
+      declarations: [AppComponent],
     }).compileComponents();
   });
 
@@ -24,6 +22,8 @@ describe('AppComponent', () => {
   it('should render title', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('becks-and-teds-show app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain(
+      'becks-and-teds-show app is running!'
+    );
   });
 });

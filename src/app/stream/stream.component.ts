@@ -1,26 +1,63 @@
 import { Component, OnInit } from '@angular/core';
-import { TwitchEmbed } from 'twitch-player';
+import { TwitchEmbed, TwitchEmbedOptions } from 'twitch-player';
+import { environment } from 'src/environments/environment';
+import { TokenService } from '../services/token-service.service';
+import axios from 'axios';
 
 @Component({
   selector: 'app-stream',
   templateUrl: './stream.component.html',
-  styleUrls: ['./stream.component.scss']
+  styleUrls: ['./stream.component.scss'],
 })
 export class StreamComponent implements OnInit {
+  clientId = environment.TWITCH_CLIENT_ID;
+  streamName = 'becksandtedsshow';
+  baseStreamAPIUrl = 'https://api.twitch.tv/helix/streams?user_login=';
+
+  bearerToken: any;
+
   player: any;
-  options = {
-    width: 768,
-    height: 768,
-    allowFullscreen: true,
-    autoplay: true,
-    channel: "becksandtedsshow",
-    parent: ["localhost"]
-  };
 
-  constructor() { }
+  constructor(private tokenService: TokenService) {}
 
-  ngOnInit(): void {
-      this.player = new TwitchEmbed('stream', this.options);
+  async ngOnInit() {
+    let token_response = await this.tokenService.getToken();
+    this.bearerToken = token_response['data']['access_token'];
+    let online_response = await this.isOnline();
+    let options: TwitchEmbedOptions;
+
+    if (online_response['data']['data'].length === 0) {
+      options = {
+        width: 768,
+        height: 768,
+        allowFullscreen: true,
+        autoplay: true,
+        video: '1249228263',
+        parent: ['localhost'],
+      };
+    } else {
+      options = {
+        width: 768,
+        height: 768,
+        allowFullscreen: true,
+        autoplay: true,
+        channel: this.streamName,
+        parent: ['localhost'],
+      };
+    }
+
+    console.log(options);
+
+    this.player = new TwitchEmbed('stream', options);
   }
 
+  async isOnline() {
+    let fullUrl = `${this.baseStreamAPIUrl}${this.streamName}`;
+    let headers = {
+      'Client-Id': this.clientId,
+      Authorization: 'Bearer ' + this.bearerToken,
+    };
+
+    return axios.get(fullUrl, { headers: headers });
+  }
 }
