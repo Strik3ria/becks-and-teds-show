@@ -46,8 +46,6 @@ export class StreamComponent implements OnInit {
       };
     }
 
-    console.log(options);
-
     this.player = new TwitchEmbed('stream', options);
   }
 
