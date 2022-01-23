@@ -32,7 +32,7 @@ export class StreamComponent implements OnInit {
         height: 768,
         allowFullscreen: true,
         autoplay: true,
-        video: '1264669733',
+        video: '1272492173',
         parent: ['localhost'],
       };
     } else {
