@@ -7,7 +7,6 @@ import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { StreamComponent } from './stream/stream.component';
 import { AboutComponent } from './about/about.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { TokenService } from './services/token-service.service';
 
@@ -19,7 +18,7 @@ import { TokenService } from './services/token-service.service';
     StreamComponent,
     AboutComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, NgbModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [TokenService],
   bootstrap: [AppComponent],
 })
